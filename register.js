@@ -19,7 +19,7 @@ form.addEventListener("submit", (e) => {
 
       console.log(user);
       alert("REGISTERATION SUCCESSFULL")
-      window.location = "login.html";
+      window.location = "index.html";
     })
     .catch((error) => {
       const errorCode = error.code;

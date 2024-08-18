@@ -50,7 +50,7 @@ body {
   font-weight: 500;
 }
 
-.login-btn {
+.logout-btn {
   padding: 10px 20px;
   background-color: #0056b3;
   color: #fff;
@@ -61,7 +61,7 @@ body {
   margin-right: 10px;
 }
 
-.login-btn:hover {
+.logout-btn:hover {
   background-color: #003d80;
   transform: scale(1.05);
 }
