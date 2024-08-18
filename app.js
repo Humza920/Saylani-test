@@ -1,29 +1,29 @@
 import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
-import { auth } from "./config.js";
+import { auth } from "./config.js";  // Import auth from config
 
-const form = document.querySelector("#loginForm");
-const password = document.querySelector("#loginPassword");
-const email = document.querySelector("#loginEmail");
+const form = document.querySelector("#loginForm");  // Select form element
+const password = document.querySelector("#loginPassword");  // Select password input
+const email = document.querySelector("#loginEmail");  // Select email input
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  signInWithEmailAndPassword(auth, email.value, password.value)
-    .then((userCredential) => {
+form.addEventListener("submit", (e) => {  // Handle form submission
+  e.preventDefault();  // Prevent default form action
+
+  signInWithEmailAndPassword(auth, email.value, password.value)  // Sign in with Firebase Auth
+    .then((userCredential) => {  // Handle successful login
         
-        email.value= ""
-        password.value= ""
+        email.value= "";  // Clear email input
+        password.value= "";  // Clear password input
 
       const user = userCredential.user;
 
-      console.log(user);
-      alert("LOGIN SUCCESSFULL")
+      console.log(user);  // Log logged-in user
+      alert("LOGIN SUCCESSFUL");
 
-      window.location = "dashbored.html"
+      window.location = "dashbored.html";  // Redirect to dashboard
     })
-    .catch((error) => {
+    .catch((error) => {  // Handle login errors
       const errorCode = error.code;
       const errorMessage = error.message;
-      console.log(errorMessage);
-      
+      console.log(errorMessage);  // Log error message
     });
 });
